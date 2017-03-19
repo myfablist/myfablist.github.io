@@ -1,3 +1,12 @@
+//import React from 'react';
+
+//const App = () => <h1>Hello</h1>
+//class App extends React.Component {
+  //render(){
+    //return <h1>Hello World</h1>
+  //}
+//}
+
 import React, { PropTypes } from 'react';
 import Interactive from 'react-interactive';
 import { Link } from 'react-router';
@@ -8,7 +17,22 @@ const propTypes = {
   routes: PropTypes.array.isRequired,
 };
 
-function App({ children, routes }) {
+App.projLink = "https://github.com/myfablist/myfablist.github.io"
+
+//<nav style={s.mapMenu}>
+  //{generateMapMenu()}
+//</nav>
+//
+function App({children, routes}) {
+  //console.log(s);
+  //children = s.children;
+  //routes = s.route;
+  //function generateMapMenu() {
+    //console.log(routes);
+    //let name = routes.map(route => route.mapMenuTitle);
+    //console.log('Name: ',name);
+    //return <span>Boo</span>
+  //}
   function generateMapMenu() {
     let path = '';
 
@@ -20,6 +44,7 @@ function App({ children, routes }) {
       return path;
     }
 
+    console.log('Route: ',routes);
     return (
       routes.filter(route => route.mapMenuTitle)
         .map((route, index, array) => (
@@ -35,32 +60,84 @@ function App({ children, routes }) {
     );
   }
 
+  const projLink =  "https://github.com/myfablist/myfablist.github.io"
 
   return (
     <div style={s.root}>
-      <h1 style={s.title}>Single Page Apps for GitHub Pages</h1>
-      <Interactive
-        as="a"
-        href="https://github.com/rafrex/spa-github-pages"
-        style={s.repoLink}
-        {...s.link}
-      >https://github.com/rafrex/spa-github-pages</Interactive>
-      <nav style={s.mapMenu}>
-        {generateMapMenu()}
+      <header style={s.header}>
+        <div className="banner">
+          <div className="bannerTitle">MyFabList</div>
+        </div>
+      </header>
+      <nav style={s.nav}>
+        <div style={s.pageLinkContainer}>
+          <Interactive
+            as={Link}
+            {...s.link}
+            to="/"
+          >Home</Interactive>
+        </div>
+        <div style={s.pageLinkContainer}>
+          <Interactive
+            as={Link}
+            {...s.link}
+            to="/anime"
+          >Anime</Interactive>
+        </div>
+        <div style={s.pageLinkContainer}>
+          <Interactive
+            as={Link}
+            {...s.link}
+            to="/book"
+          >Books</Interactive>
+        </div>
+        <div style={s.pageLinkContainer}>
+          <Interactive
+            as={Link}
+            {...s.link}
+            to="/tvshow"
+          >TV Shows</Interactive>
+        </div>
+        <div style={s.pageLinkContainer}>
+          <Interactive
+            as={Link}
+            {...s.link}
+            to="/movie"
+          >Movies</Interactive>
+        </div>
       </nav>
+
       {children}
-      <div style={s.creditLine}>
-        <Interactive
-          as="a"
-          href="http://www.rafaelpedicini.com"
-          interactiveChild
-          focus={{}}
-          touchActive={{}}
-          touchActiveTapOnly
-        >
-          Code and concept by <span {...s.childLink}>Rafael Pedicini</span>
-        </Interactive>
-      </div>
+      <footer style={s.footer}>
+        <div style={s.creditLine}>
+          <span>Code & concept by </span>
+          <Interactive
+            as="a"
+            href="https://github.com/clearnote01"
+            interactiveChild
+            focus={{}}
+            touchActive={{}}
+            touchActiveTapOnly
+          >
+            <span {...s.childLink}>
+              Utkarsh&nbsp;  
+            </span>
+          </Interactive>
+          <Interactive
+            as="a"
+            href="https://github.com/hackboxlive"
+            interactiveChild
+            focus={{}}
+            touchActive={{}}
+            touchActiveTapOnly
+          >
+            &&nbsp;
+            <span {...s.childLink}>
+              Sarv Shakti {routes.kids}
+            </span>
+          </Interactive>
+        </div>
+      </footer>
     </div>
   );
 }
