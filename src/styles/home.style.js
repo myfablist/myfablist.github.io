@@ -23,8 +23,8 @@ s.leftContent = {
 }
 
 s.carousel = {
-  minHeight: '35vh',
-  maxHeight: '35vh',
+  minHeight: '25vh',
+  maxHeight: '25vh',
   flex: '1 0 auto',
   flexDirection: 'column',
   display: 'flex',
@@ -33,15 +33,35 @@ s.carousel = {
     flex: '1 0 auto',
   },
   body: {
+    position: 'relative',
     flex: '12 0 auto',
+    flexWrap: 'wrap',
     display: 'flex',
     flexDirection: 'row',
     backgroundColor: 'gray',
     padding: '3px',
     margin: '3px',
+    arrowLeft:  {
+      position: 'absolute',
+      fontSize: '30px',
+      left: '0',
+      flex: '1 0 auto',
+      alignSelf: 'center',
+    },
+    arrowRight:  {
+      position: 'absolute',
+      fontSize: '30px',
+      right: '0',
+      flex: '1 0 auto',
+      alignSelf: 'center',
+    },
     card: {
       backgroundColor: 'white',
       flex: '1 0 auto',
+      minWidth: '20px',
+      maxWidth: '30%',
+      marginLeft: '1%',
+      marginRight: '1%',
     }
   }
     
