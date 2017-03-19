@@ -42,6 +42,9 @@ s.carousel = {
     card: {
       backgroundColor: 'white',
       flex: '1 0 auto',
+      minWidth: 120,
+      maxWidth: 120,
+      height: 160
     }
   }
     
