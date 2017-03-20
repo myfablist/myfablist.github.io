@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MyFabList</title>
     <meta name="description" content="A site to hold all your entertainment data in an organized manner.">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <style>
       html, body, div, span, a, p, ul, li, h1, code, nav {
@@ -26,7 +28,12 @@
       otherwise there is a phantom div on the right side of the screen (from the left:50vw),
       that the window will scroll to. Note the left:50vw and transform is used to center content
       horizaontally based on vw to prevent content jump when vertical scroll bar show/hide.*/
-      body { overflow-x: hidden; }
+      body { 
+        overflow-x: hidden; 
+        display: flex;
+        flex-direction: 'row';
+        flex-wrap: 'wrap';
+      }
       #root {
         min-height: 100%;
       }

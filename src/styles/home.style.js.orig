@@ -39,15 +39,14 @@ s.carousel = {
     display: 'flex',
     flexDirection: 'row',
     backgroundColor: 'gray',
-    paddingTop: '3px',
-    paddinBottom: '3px',
+    padding: '3px',
+    margin: '3px',
     arrowLeft:  {
       position: 'absolute',
       fontSize: '30px',
       left: '0',
       flex: '1 0 auto',
       alignSelf: 'center',
-      opacity: '0.2',
     },
     arrowRight:  {
       position: 'absolute',
@@ -55,24 +54,27 @@ s.carousel = {
       right: '0',
       flex: '1 0 auto',
       alignSelf: 'center',
-      opacity: '0.2',
     },
     card: {
       backgroundColor: 'white',
       flex: '1 0 auto',
+<<<<<<< HEAD
+      minWidth: 120,
+      maxWidth: 120,
+      height: 160
+=======
       minWidth: '20px',
       maxWidth: '30%',
       marginLeft: '1%',
       marginRight: '1%',
+>>>>>>> 0e32cbaff3c56699f23c853e0a2d11246be7586a
     }
   }
     
 }
   
 s.rightContent = {
-  flex: '0.5 3 20%',
-  minWidth: '200px',
-
+  flex: '1 0 auto',
   display: 'flex',
   backgroundColor: 'white',
   border: '1px solid green',
