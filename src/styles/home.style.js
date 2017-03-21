@@ -18,8 +18,10 @@ s.leftContent = {
   display: 'flex',
   flexWrap: 'wrap',
   flexDirection: 'column',
-  backgroundColor: 'white',
+  backgroundColor: 'gray',
   border: '1px solid red',
+  color: 'black',
+
 }
 
 s.carousel = {

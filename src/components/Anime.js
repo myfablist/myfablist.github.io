@@ -1,4 +1,5 @@
 import React from 'react';
+import Slider from 'react-slick';
 import { render } from 'react-dom';
 
 class Anime extends React.Component {
