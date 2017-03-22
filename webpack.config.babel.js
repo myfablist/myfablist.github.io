@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+let path = require('path');
 
 export default {
   entry: `${__dirname}/src/index.js`,
@@ -10,7 +11,11 @@ export default {
 
   module: {
     loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' },
+      { test: /\.jsx?$/, exclude: [/node_modules/, /flexboxgrid/], loader: 'babel' },
+      {
+        test: /\.css/,
+        loader: "style!css?modules"
+      },
     ],
   },
 
