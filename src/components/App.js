@@ -11,6 +11,8 @@ import React, { PropTypes } from 'react';
 import Interactive from 'react-interactive';
 import { Link } from 'react-router';
 import s from '../styles/app.style';
+import Header from './header';
+import {Grid, Row, Col} from 'react-flexbox-grid';
 
 const propTypes = {
   children: PropTypes.element.isRequired,
@@ -64,80 +66,103 @@ function App({children, routes}) {
 
   return (
     <div style={s.root}>
-      <header style={s.header}>
-        <div className="banner">
-          <div className="bannerTitle">MyFabList</div>
-        </div>
-      </header>
-      <nav style={s.nav}>
-        <div style={s.pageLinkContainer}>
-          <Interactive
-            as={Link}
-            {...s.link}
-            to="/"
-          >Home</Interactive>
-        </div>
-        <div style={s.pageLinkContainer}>
-          <Interactive
-            as={Link}
-            {...s.link}
-            to="/anime"
-          >Anime</Interactive>
-        </div>
-        <div style={s.pageLinkContainer}>
-          <Interactive
-            as={Link}
-            {...s.link}
-            to="/book"
-          >Books</Interactive>
-        </div>
-        <div style={s.pageLinkContainer}>
-          <Interactive
-            as={Link}
-            {...s.link}
-            to="/tvshow"
-          >TV Shows</Interactive>
-        </div>
-        <div style={s.pageLinkContainer}>
-          <Interactive
-            as={Link}
-            {...s.link}
-            to="/movie"
-          >Movies</Interactive>
-        </div>
-      </nav>
-
-      {children}
-      <footer style={s.footer}>
-        <div style={s.creditLine}>
-          <span>Code & concept by </span>
-          <Interactive
-            as="a"
-            href="https://github.com/clearnote01"
-            interactiveChild
-            focus={{}}
-            touchActive={{}}
-            touchActiveTapOnly
-          >
-            <span {...s.childLink}>
-              Utkarsh&nbsp;  
-            </span>
-          </Interactive>
-          <Interactive
-            as="a"
-            href="https://github.com/hackboxlive"
-            interactiveChild
-            focus={{}}
-            touchActive={{}}
-            touchActiveTapOnly
-          >
-            &&nbsp;
-            <span {...s.childLink}>
-              Sarv Shakti {routes.kids}
-            </span>
-          </Interactive>
-        </div>
-      </footer>
+      <Grid fluid>
+        <Row>
+          <Col sm={1} xs={1} md={2} lg={2}></Col>
+          <Col sm={12} xs={12} md={8} lg={8}>
+            <Row>
+              <Col sm={12} xs={12} md={12} lg={12}>
+                <header style={s.header}>
+                  <div className="banner">
+                    <div className="bannerTitle">MyFabList</div>
+                  </div>
+                </header>
+              </Col>
+            </Row>
+            <Row>
+            <Col md={12} sm={12} lg={12} xs={12} >
+              <nav style={s.nav}>
+                <div style={s.pageLinkContainer}>
+                  <Interactive
+                    as={Link}
+                    {...s.link}
+                    to="/"
+                  >Home</Interactive>
+                </div>
+                <div style={s.pageLinkContainer}>
+                  <Interactive
+                    as={Link}
+                    {...s.link}
+                    to="/anime"
+                  >Anime</Interactive>
+                </div>
+                <div style={s.pageLinkContainer}>
+                  <Interactive
+                    as={Link}
+                    {...s.link}
+                    to="/book"
+                  >Books</Interactive>
+                </div>
+                <div style={s.pageLinkContainer}>
+                  <Interactive
+                    as={Link}
+                    {...s.link}
+                    to="/tvshow"
+                  >TV Shows</Interactive>
+                </div>
+                <div style={s.pageLinkContainer}>
+                  <Interactive
+                    as={Link}
+                    {...s.link}
+                    to="/movie"
+                  >Movies</Interactive>
+                </div>
+              </nav>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12} sm={12} xs={12} lg={12}>
+              {children}
+            </Col>
+          </Row>
+          <Row>
+          <Col md={12} sm={12} xs={12} lg={12}>
+            <footer style={s.footer}>
+              <div style={s.creditLine}>
+                <span>Code & concept by </span>
+                <Interactive
+                  as="a"
+                  href="https://github.com/clearnote01"
+                  interactiveChild
+                  focus={{}}
+                  touchActive={{}}
+                  touchActiveTapOnly
+                >
+                  <span {...s.childLink}>
+                    Utkarsh&nbsp;  
+                  </span>
+                </Interactive>
+                <Interactive
+                  as="a"
+                  href="https://github.com/hackboxlive"
+                  interactiveChild
+                  focus={{}}
+                  touchActive={{}}
+                  touchActiveTapOnly
+                >
+                  &&nbsp;
+                  <span {...s.childLink}>
+                    Sarv Shakti {routes.kids}
+                  </span>
+                </Interactive>
+              </div>
+            </footer>
+          </Col>
+          </Row>
+        </Col>
+        <Col sm={1} xs={1} md={2} lg={2}></Col>
+        </Row>
+      </Grid>
     </div>
   );
 }

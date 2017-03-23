@@ -7,17 +7,17 @@ s.pageLinkContainer = {
 };
 
 s.homeContent = {
-  display: 'flex',
-  flexWrap: 'wrap',
-  flexDirection: 'row',
-  minHeight: '100vh'
+  //display: 'flex',
+  //flexWrap: 'wrap',
+  //flexDirection: 'row',
+  //minHeight: '100vh',
 }
 
 s.leftContent = {
-  flex: '1 0 auto',
-  display: 'flex',
-  flexWrap: 'wrap',
-  flexDirection: 'column',
+  //flex: '1 0 auto',
+  //display: 'flex',
+  //flexWrap: 'wrap',
+  //flexDirection: 'column',
   backgroundColor: 'gray',
   border: '1px solid red',
   color: 'black',
@@ -26,7 +26,7 @@ s.leftContent = {
 
 s.carousel = {
   minHeight: '25vh',
-  maxHeight: '25vh',
+
   marginLeft: '30px',
   marginRight: '30px',
   flex: '1 0 auto',
@@ -36,14 +36,13 @@ s.carousel = {
   heading: {
     flex: '1 0 auto',
   },
-  maxWidth: '50vw',
 }
   
 s.rightContent = {
-  flex: '1 0 auto',
-  minWidth: '200px',
+  //flex: '1 0 auto',
+  //minWidth: '200px',
 
-  display: 'flex',
+  //display: 'flex',
   backgroundColor: 'white',
   border: '1px solid green',
 }
