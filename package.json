@@ -13,6 +13,8 @@
   "license": "MIT",
   "dependencies": {
     "build-bundle": "^2.0.8",
+    "install": "^0.8.7",
+    "npm": "^4.4.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-flexbox-grid": "^1.0.2",
