@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import {Grid, Row, Col} from 'react-flexbox-grid';
+import { Header, HeaderItem} from './header';
 
 class Header extends React.Component {
 	constructor(props) {
@@ -9,6 +10,7 @@ class Header extends React.Component {
 			backgroundColor: 'red',
 		}
 	}
+
 	headerRight() {
 		if (this.props.headerPropRight) {
       console.log(this.props.headerPropRight);
@@ -38,4 +40,17 @@ class Header extends React.Component {
 	}
 }
 
-export default Header;
+class HeaderItem extends React.Component {
+	render() {
+		return (
+    	<Interactive
+        as={this.props.Link}
+        {...this.props.slink}
+        to={this.props.href}>
+				{this.props.name}
+			</Interactive>
+		)
+	}
+}	
+
+export default { Header, HeaderItem};
