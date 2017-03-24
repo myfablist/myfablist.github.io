@@ -11,8 +11,8 @@ import React, { PropTypes } from 'react';
 import Interactive from 'react-interactive';
 import { Link } from 'react-router';
 import s from '../styles/app.style';
-import {Header} from './header';
-import {HeaderItem} from './header';
+import Header from './header';
+import HeaderItem from './HeaderItems';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 
 const propTypes = {
@@ -65,22 +65,21 @@ function App({children, routes}) {
 
   const projLink =  "https://github.com/myfablist/myfablist.github.io"
 
-	function headerItems() {
-		let items = []
-		let headers = [
-			{ name: 'Home', href="/" },
-			{ name: 'Anime', href="/anime" },
-			{ name: 'TV Shows', href="/tvshow" },
-			{ name: 'Movies', href="/movie" },
-			{ name: 'Books', href="/book" },
-		]
-		for (let header in headers) {
-			items.push(<HeaderItem name={header.name} href={header.href} Link={Link} slink={s.link}></HeaderItem>)
-		}
-
-		return items;	
-	k
 	
+  function headerItems() {
+    let items = []
+    let headers = [
+      { name: 'Home', href:"/" },
+      { name: 'Anime', href:"/anime" },
+      { name: 'TV Shows', href:"/tvshow" },
+      { name: 'Movies', href:"/movie" },
+      { name: 'Books', href:"/book" },
+    ]
+    for (let i in headers) {
+      items.push(<HeaderItem name={headers[i].name} href={headers[i].href} Link={Link} slink={s.link}></HeaderItem>)
+    }
+    return items;	
+  }
 
   return (
     <div style={s.root}>
@@ -98,10 +97,8 @@ function App({children, routes}) {
               </Col>
             </Row>
             <Row>
-            <Col md={12} sm={12} lg={12} xs={12} >
-							<Header headerPropsLeft={['Anime','TV Show','Movies']}>
-							</Header>
-							<Header headerPropsLeft={headerItems()}></Header>
+            <Col style={{backgroundColor: 'orange'}} sm={12} lg={12} xs={12} >
+              <Header headerPropLeft={headerItems()}></Header>
             </Col>
           </Row>
           <Row>

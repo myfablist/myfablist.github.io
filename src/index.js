@@ -17,12 +17,15 @@ import People from './components/People';
 import PageNotFound from './components/PageNotFound';
 import ExampleComponent from './components/ExampleComponent';
 import ExampleTwoDeepComponent from './components/ExampleTwoDeepComponent';
+import TopRatedAnime from './components/TopRatedAnime';
 
 
 const routes = (
   <Route path="/" mapMenuTitle="Home" component={App}>
     <IndexRoute component={Home} />
-    <Route path="anime" shows="life, bitch, fuck" mapMenuTitle="ANIME" component={() => (<Anime shows="kill, gon, chro" />)} >
+    <Route path="anime" shows="life, bitch, fuck" mapMenuTitle="ANIME" component={Anime} >
+      <Route path="top_rated" mapMenuTitle="TOP Rated anime" component={TopRatedAnime}>
+      </Route>
     </Route>
     <Route path="book" mapMenuTitle="BOOK" component={Book}>
     </Route>
@@ -31,6 +34,8 @@ const routes = (
     <Route path="movie" mapMenuTitle="MOVIE" component={Movie}>
     </Route>
     <Route path="people" mapMenuTitle="People" component={People}>
+    </Route>
+    <Route path="top_rated" mapMenuTitle="TOP Rated anime" component={TopRatedAnime}>
     </Route>
 
     <Route path="example" mapMenuTitle="Example" component={ExampleComponent}>

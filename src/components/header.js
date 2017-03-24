@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import {Grid, Row, Col} from 'react-flexbox-grid';
-import { Header, HeaderItem} from './header';
 
 class Header extends React.Component {
 	constructor(props) {
@@ -17,7 +16,7 @@ class Header extends React.Component {
       return(
         <Col lg>
           <Row end="lg">	
-            {this.props.headerPropRight.map((x)=><Col md lg xs={1}>{x}</Col>)}
+            {this.props.headerPropRight.map((x)=><Col md={1} lg={1} xs={1}>{x}</Col>)}
           </Row>
         </Col>
       )
@@ -28,10 +27,10 @@ class Header extends React.Component {
 	}
 	render() {
 		return (
-			<Row md={12}>
-				<Col lg={9}>
-					<Row >	
-						{this.props.headerPropLeft.map((x)=><Col style={this.style} md lg={1} xs={1}>{x}</Col>)}
+			<Row> 
+				<Col style={{backgroundColor: 'gray'}} md={9} xs={9} sm={9} lg={9}>
+					<Row style={{backgroundColor: 'green'}}>	
+						{this.props.headerPropLeft.map((x)=><Col style={this.style} md={2} lg={2} xs={4}>{x}</Col>)}
 					</Row>
 				</Col>
         {this.headerRight()}
@@ -40,17 +39,4 @@ class Header extends React.Component {
 	}
 }
 
-class HeaderItem extends React.Component {
-	render() {
-		return (
-    	<Interactive
-        as={this.props.Link}
-        {...this.props.slink}
-        to={this.props.href}>
-				{this.props.name}
-			</Interactive>
-		)
-	}
-}	
-
-export default { Header, HeaderItem};
+export default Header;
